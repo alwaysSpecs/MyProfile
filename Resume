@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Professional Resume</title>
+
+<style>
+    :root {
+        --primary: #4CAF50;
+        --bg: #f4f4f4;
+        --text: #333;
+        --card: #fff;
+    }
+
+    body.dark {
+        --bg: #121212;
+        --text: #eee;
+        --card: #1e1e1e;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        transition: 0.3s;
+    }
+
+    header {
+        background: var(--primary);
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .card {
+        background: var(--card);
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 5px;
+    }
+
+    .skills .skill {
+        margin: 10px 0;
+    }
+
+    .skill-bar {
+        height: 10px;
+        background: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .skill-level {
+        height: 100%;
+        background: var(--primary);
+        width: 0;
+        transition: width 1s;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        background: var(--primary);
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .toggle-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+
+<header>
+    <h1 id="name">Smital Shishupal</h1>
+    <p id="title">Web Developer | Designer | Programmer</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>About Me</h2>
+        <p id="about">
+            Passionate developer with experience in building responsive web applications and dynamic user interfaces.
+        </p>
+    </div>
+
+
+    <div class="card skills">
+        <h2>Skills</h2>
+
+        <div class="skill">
+            HTML
+            <div class="skill-bar">
+                <div class="skill-level" data-level="90%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            CSS
+            <div class="skill-bar">
+                <div class="skill-level" data-level="85%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            JavaScript
+            <div class="skill-bar">
+                <div class="skill-level" data-level="80%"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Email: your@email.com</p>
+        <p>Phone: +91 XXXXX XXXXX</p>
+    </div>
+
+</div>
+
+<script>
+    // Animate skill bars
+    window.onload = () => {
+        const skills = document.querySelectorAll(".skill-level");
+        skills.forEach(skill => {
+            skill.style.width = skill.getAttribute("data-level");
+        });
+    };
+
+    // Toggle dark mode
+    function toggleTheme() {
+        document.body.classList.toggle("dark");
+    }
+</script>
+
+</body>
+</html>
